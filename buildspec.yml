@@ -3,26 +3,23 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 16
+      nodejs: 18
     commands:
-      - echo "installing something"
-
+      - echo "Installing dependencies (if any)"
   pre_build:
     commands:
-      - echo "we are in the pre build phase"
-
+      - echo "We are in the pre-build phase"
   build:
     commands:
-      - echo "we are in the build block"
-      - echo "we will run some tests"
+      - echo "We are in the build phase"
       - grep -Fq "Congratulations" index.html
-      - echo "Zipping all files for deployment..."
-      - zip -r app.zip .
-
   post_build:
     commands:
-      - echo "we are in the post build phase"
+      - echo "We are in the post-build phase"
 
 artifacts:
   files:
-    - app.zip
+    - appspec.yml
+    - index.html
+    - scripts/**/*
+  discard-paths: yes
