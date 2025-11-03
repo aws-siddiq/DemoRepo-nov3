@@ -16,14 +16,15 @@ phases:
             - grep -Fq "Congratulations" index.html
             - echo "Zipping all files for deployment..."
             - zip -r app.zip .
-  post_build:
-    commands:
-      - echo "we are in the post build phase"
+    post_build:
+        commands:
+          - echo "we are in the post build phase"
 
 artifacts:
   files:
     - app.zip
             
+
 
 
 
