@@ -18,6 +18,9 @@ phases:
         commands:
             - echo "we are in the post build phase"
 artifacts:
-    files:
-        - '**/*'
+  files:
+    - DemoProject-nov3.zip
+  discard-paths: yes
+  name: DemoProject-nov3
             
+
